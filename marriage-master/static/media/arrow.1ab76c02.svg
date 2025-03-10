@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="arrow.svg"
+   id="svg11"
+   version="1.1"
+   viewBox="0 0 300 200">
+  <metadata
+     id="metadata15">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     inkscape:current-layer="svg11"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-9"
+     inkscape:window-x="-9"
+     inkscape:cy="56.989514"
+     inkscape:cx="150"
+     inkscape:zoom="4.0266667"
+     showgrid="false"
+     id="namedview13"
+     inkscape:window-height="1051"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     inkscape:document-rotation="0" />
+  <defs
+     id="defs7">
+    <style
+       id="style2">
+        path, polyline {
+            fill: none;
+            stroke: #231F20;
+            vector-effect: non-scaling-stroke;
+            stroke-width: 2;
+       }
+        path {
+            stroke-dasharray: 11, 5; 
+        }
+    </style>
+    <marker
+       markerUnits="userSpaceOnUse"
+       orient="-45"
+       refY="5.1"
+       refX="9.5"
+       markerHeight="8"
+       markerWidth="10"
+       id="pointer">
+      <polyline
+         id="polyline4"
+         points="1 1, 9 5, 1 7" />
+    </marker>
+  </defs>
+  <path
+     sodipodi:nodetypes="cccsc"
+     id="path9"
+     marker-end="url(#pointer)"
+     d="M 299.26908,169.23925 C 181.06741,81.595826 -94.589777,125.24588 56.883599,179.99527 206.93966,234.186 246.65427,158.82806 48.154941,103.40827 -29.9354,77.208164 -1.5821459,32.779148 68.582502,4.9452914 c 5.817632,-2.3078163 2.38998,-2.7760168 4.93181,-3.6187095" />
+</svg>
