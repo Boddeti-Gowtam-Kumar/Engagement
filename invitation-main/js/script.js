@@ -91,3 +91,28 @@ var styles2 = [
 ].join(";");
 
 console.log("\n\n%c SAVE THE DATE: 14th Feb, 2021", styles);
+document.addEventListener("DOMContentLoaded", function () {
+    const video = document.querySelector(".tile__video");
+    const audio = document.getElementById("my_audio");
+
+    if (video && audio) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    video.play();
+                    audio.pause(); // Stop background music when video starts
+                } else {
+                    video.pause();
+                    audio.play(); // Resume background music when video is out of view
+                }
+            });
+        }, { threshold: 0.5 }); // Trigger when 50% of video is visible
+
+        observer.observe(video);
+
+        // Also, pause background audio when the user manually plays the video
+        video.addEventListener("play", () => audio.pause());
+        video.addEventListener("pause", () => audio.play());
+    }
+});
+
