@@ -13,32 +13,31 @@
   });
 })(jQuery);
 
+// Play background audio on click
 $(document).on("click", function () {
   document.getElementById("my_audio").play();
   console.log("Shaadi me zaroor aana");
 });
 
-function pauseAudio() {
+// Pause audio function
+function pauseAudio(event) {
   document.getElementById("my_audio").pause();
   console.log("Shaadi me pakka aana");
   event.stopPropagation();
 }
 
+// Countdown Timer
 var countDownDate = new Date("March 14, 2025 12:00:00").getTime();
 
 var x = setInterval(function () {
   var now = new Date().getTime();
-
-  // Find the distance between now and the count down date
   var distance = countDownDate - now;
 
-  // Time calculations for days, hours, minutes and seconds
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  // Output the result in an element with id="demo"
   document.getElementById("time").innerHTML =
     "<div class='container'><div class='days block'>" +
     days +
@@ -59,6 +58,7 @@ var x = setInterval(function () {
   }
 }, 1000);
 
+// Styling console logs
 var styles = [
   "background: linear-gradient(#D33106, #571402)",
   "border: 1px solid red",
@@ -72,22 +72,38 @@ var styles = [
   "font-size: 32px",
 ].join(";");
 
-var styles1 = [
-  "color: #FF6C37",
-  "display: block",
-  "text-shadow: 0 2px 0 rgba(0, 0, 0, 1)",
-  "line-height: 40px",
-  "font-weight: bold",
-  "font-size: 32px",
-].join(";");
+console.log("\n\n%c SAVE THE DATE: 14th Mar, 2025", styles);
 
-var styles2 = [
-  "color: teal",
-  "display: block",
-  "text-shadow: 0 2px 0 rgba(0, 0, 0, 1)",
-  "line-height: 40px",
-  "font-weight: bold",
-  "font-size: 32px",
-].join(";");
+// Video and Audio Handling
+document.addEventListener("DOMContentLoaded", function () {
+  const video = document.querySelector(".tile__video");
+  const audio = document.getElementById("my_audio");
 
-console.log("\n\n%c SAVE THE DATE: 14th Feb, 2021", styles);
+  if (video && audio) {
+    // Observe when video enters/exits viewport
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          video.play();
+          audio.pause(); // Stop background music when video starts
+        } else {
+          video.pause();
+          audio.play(); // Resume background music when video is out of view
+        }
+      });
+    }, { threshold: 0.5 }); // Trigger when 50% of video is visible
+
+    observer.observe(video);
+
+    // Prevent video download
+    video.setAttribute("controlsList", "nodownload");
+
+    // Pause background audio when user manually plays video
+    video.addEventListener("play", () => audio.pause());
+    video.addEventListener("pause", () => audio.play());
+
+    // Ensure video fits all screen sizes
+    video.style.maxWidth = "100%";
+    video.style.height = "auto";
+  }
+});
