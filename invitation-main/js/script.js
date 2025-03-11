@@ -13,11 +13,6 @@
   });
 })(jQuery);
 
-// Play background audio on click
-$(document).on("click", function () {
-  document.getElementById("my_audio").play();
-  console.log("Shaadi me zaroor aana");
-});
 
 // Pause audio function
 function pauseAudio(event) {
