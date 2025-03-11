@@ -7,6 +7,14 @@ body {
     rgb(151, 206, 226)
   );
 }
+.tile__video {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 
 img {
   max-width: 100%;
